@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <link href="StyleSheet2.css" rel="stylesheet" />
+    <script src="jquery-1.7.1.js"></script>
+    <script src="JavaScript.js"></script>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body class="bg-gray2">
+    <header class="header bg-blue center fixed-top">
+        <div class="header-3tab-blue">
+            <div id="tab1" class="tab-item select" onclick="headerTabSelect(this);">
+                My Tasks
+            </div>
+            <div id="tab2" class="tab-item" onclick="headerTabSelect(this);">
+                In Progress
+            </div>
+            <div id="tab3" class="tab-item" onclick="headerTabSelect(this);">
+                Completed
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="row">
+                <input type="button" id="btn_insert" class="btn-white left" value="＋ Add Task" onclick="insertAction();" />
+            </div>
+
+            <div id="insert" class="row" style="display:none;">
+                <form class="form">
+                    <div class="form-group bg-gray1">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="frame-cb cb-blue">
+                                    <input type="checkbox" id="insert_checked" />
+                                    <label for="insert_checked">Type Something Here...</label>
+                                </div>
+                            </div>
+                            <div class="col-4 right icon-div">
+                                <i class="far fa-star star"></i>
+                                <i class="fas fa-marker edit select"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group bg-gray1 bottom-end right-end left-end">
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-data">Deadline</div>
+                        </div>
+                        <div class="row content-data">
+                            <div class="col-4">
+                                <input type="text" placeholder="yyyy/mm/dd" id="insert_date" class="in-white" />
+                            </div>
+                            <div class="col-4">
+                                <input type="text" placeholder="hh:mm" id="insert_time" class="in-white" />
+                            </div>
+                        </div>
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-file col-icon"></i>
+                            </div>
+                            <div class="col-data">File</div>
+                        </div>
+                        <div class="row content-data">
+                            <label class="cl-gray3" id="insert_file_lab"></label>
+                            <input type="button" class="btn-file" value="＋" onclick="$('#insert_file').click();" />
+                            <input type="file" id="insert_file" class="in-white" hidden="hidden" onchange="fileChange(this, '#insert_file_lab');" />
+                        </div>
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-comment-dots col-icon"></i>
+                            </div>
+                            <div class="col-data">Comment</div>
+                        </div>
+                        <div class="row content-data">
+                            <textarea id="insert_comment" class="textarea-nre" placeholder="Type your memo here..."></textarea>
+                        </div>
+                        <div class="row botton">
+                            <div class="col-6">
+                                <input type="button" value="× Cancel" class="btn-cancel" onclick="insertAction();" />
+
+                            </div>
+                            <div class="col-6">
+                                <input type="button" value="＋ Add" class="btn-add" />
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div style="margin-top:40px;">
+                <div id="view"></div>
+                <!--<form class="form">
+                    <div class="form-group bg-gray1 star-root">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="frame-cb cb-blue">
+                                    <input type="checkbox" id="item_ch1" />
+                                    <label for="item_ch1">Type Something Here...</label>
+                                </div>
+                            </div>
+                            <div class="col-4 right icon-div">
+                                <i class="far fa-star star" onclick="favoriteSelect(this);"></i>
+                                <i class="fas fa-marker edit" id="btn_edit_1" tag="1" onclick="editSelect(this);" ></i>
+                            </div>
+                        </div>
+                        <div class="row content-title" id="icon_div1">
+                            <i class='far fa-calendar-alt icon cl-gray3'> 5/21</i> 
+                            <i class='far fa-file icon cl-gray3'></i> 
+                            <i class='far fa-comment-dots icon cl-gray3'></i> 
+                        </div>
+                    </div>
+
+
+                    <div class="form-group bg-gray1 bottom-end right-end left-end" id="edit1" style="display:none;">
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-data">Deadline</div>
+                        </div>
+                        <div class="row content-data">
+                            <div class="col-4">
+                                <input type="text" placeholder="yyyy/mm/dd" id="insert_date" class="in-white" />
+                            </div>
+                            <div class="col-4">
+                                <input type="text" placeholder="hh:mm" id="insert_time" class="in-white" />
+                            </div>
+                        </div>
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-file col-icon"></i>
+                            </div>
+                            <div class="col-data">File</div>
+                        </div>
+                        <div class="row content-data">
+                            <label class="cl-gray3" id="insert_file_lab"></label>
+                            <input type="button" class="btn-file" value="＋" onclick="$('#insert_file').click();" />
+                            <input type="file" id="insert_file" class="in-white" hidden="hidden" onchange="fileChange(this, '#insert_file_lab');" />
+                        </div>
+                        <div class="row content-title">
+                            <div class="col-icon">
+                                <i class="far fa-comment-dots col-icon"></i>
+                            </div>
+                            <div class="col-data">Comment</div>
+                        </div>
+                        <div class="row content-data">
+                            <textarea id="insert_comment" class="textarea-nre" placeholder="Type your memo here..."></textarea>
+                        </div>
+                        <div class="row botton">
+                            <div class="col-6">
+                                <input type="button" value="× Cancel" class="btn-cancel" onclick="editClose('#btn_edit_1');" />
+
+                            </div>
+                            <div class="col-6">
+                                <input type="button" value="＋ Add" class="btn-add" />
+                            </div>
+                        </div>
+                    </div>
+                </form>-->
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

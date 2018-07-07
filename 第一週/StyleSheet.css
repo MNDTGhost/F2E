@@ -1,0 +1,413 @@
+﻿
+
+/* header */
+.header {
+    width: 100%;
+    font-size: 24px;
+    height: 76px;
+}
+
+.header-3tab-blue {
+    min-width: 680px;
+    display: inline-block;
+    color: #00408b;
+}
+
+    .header-3tab-blue > .tab-item {
+        float: left;
+        width: 220px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        cursor: pointer;
+    }
+
+        .header-3tab-blue > .tab-item.select {
+            padding-bottom: 22px;
+            border-bottom: solid 3px #00408b;
+            color: #fff;
+        }
+
+/*content*/
+.content {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*row col*/
+.row {
+    display: flex;
+}
+
+.col-8 {
+    width: 64.5%;
+    flex-basis: 64.5%;
+}
+
+.col-10 {
+    width: 83.3%;
+    flex-basis: 83.3%;
+}
+
+.col-12 {
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.col-4 {
+    width: 35.5%;
+    flex-basis: 35.5%;
+}
+
+.col-6 {
+    width: 50%;
+    flex-basis: 50%;
+}
+
+
+.col-icon {
+    width: 25px;
+    flex-basis: 25px;
+}
+
+.col-data {
+    width: calc(100%-35px);
+    flex-basis: calc(100% - 35px);
+}
+
+.col-4, .col-8, .col-icon, .col-data {
+}
+
+
+/* form */
+
+.form {
+    width: 100%;
+}
+
+    .form > .form-group {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        color: #000;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+
+        .form > .form-group > .row {
+            padding: 10px;
+            /*justify-content: space-between;*/
+        }
+
+            .form > .form-group > .row.botton {
+                padding: 0px;
+                width: 100%;
+            }
+
+            .form > .form-group > .row.content-title {
+                padding-left: 40px;
+            }
+
+            .form > .form-group > .row.content-data {
+                padding-left: 60px;
+                width: calc(100% - 120px);
+            }
+
+                .form > .form-group > .row.content-data > label {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+
+            .form > .form-group > .row > .col-4 {
+                padding-right: 8px;
+            }
+/*button*/
+.btn-white {
+    font-size: 20px;
+    color: #C8C8C8;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background: #FFF;
+    border: solid 1px #C8C8C8;
+    cursor: pointer;
+}
+
+    .btn-white:focus {
+        outline: none;
+        border-color: #C8C8C8;
+        box-shadow: 0 0 10px #C8C8C8;
+    }
+
+.btn-add {
+    font-size: 20px;
+    color: #FFF;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    background: #4A90E2;
+    border: solid 0px;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+}
+
+    .btn-add:focus {
+        outline: none;
+        border-color: #4A90E2;
+        box-shadow: 0 0 10px #4A90E2;
+    }
+
+.btn-cancel {
+    font-size: 20px;
+    color: red;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    border: solid 0px;
+    border-bottom: solid 1.5px #C8C8C8;
+    background: #FFF;
+    cursor: pointer;
+    border-bottom-left-radius: 5px;
+}
+
+    .btn-cancel:focus {
+        outline: none;
+        border-color: #C8C8C8;
+        box-shadow: 0 0 10px #C8C8C8;
+    }
+
+.btn-file {
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    background: #C8C8C8;
+    border: solid 1px #C8C8C8;
+    cursor: pointer;
+}
+
+    .btn-file:hover {
+        background: #757575;
+    }
+
+    .btn-file:focus {
+        outline: none;
+        border-color: #C8C8C8;
+        box-shadow: 0 0 10px #C8C8C8;
+    }
+
+/*input*/
+
+.in-white {
+    font-size: 20px;
+    color: #000;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    background: #FFF;
+    border: solid 1px #C8C8C8;
+}
+
+    .in-white:focus {
+        outline: none;
+        border-color: #C8C8C8;
+        box-shadow: 0 0 10px #C8C8C8;
+    }
+
+    .in-white::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #C8C8C8;
+    }
+
+.textarea-nre {
+    height: 100px;
+    font-size: 20px;
+    color: #000;
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    background: #FFF;
+    border: solid 1px #C8C8C8;
+    resize: none;
+}
+
+    .textarea-nre:focus {
+        outline: none;
+        border-color: #C8C8C8;
+        box-shadow: 0 0 10px #C8C8C8;
+    }
+
+    .textarea-nre::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #C8C8C8;
+    }
+
+/*checkbox*/
+.frame-cb {
+    position: relative;
+}
+
+    .frame-cb > input[type=checkbox] {
+        margin: 0;
+        opacity: 0;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .frame-cb > label {
+        height: 22px;
+        display: inline-block;
+        padding-left: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .frame-cb > input[type=checkbox]:checked + label {
+        text-decoration: line-through;
+        color: #C8C8C8;
+    }
+
+    .frame-cb > label::after {
+        left: 0;
+        content: '';
+        cursor: pointer;
+        background-color: #fff;
+        position: absolute;
+        width: 22px;
+        height: 22px;
+    }
+
+    .frame-cb > input[type=checkbox]:checked + label:before {
+        z-index: 1;
+        opacity: 1;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 10px;
+        left: 5px;
+        border: 3px solid #fff;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+/*checkbox-color*/
+.cb-blue > input[type=checkbox]:checked + label:after {
+    background: #4A90E2;
+}
+
+
+/*icon*/
+.icon-div {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.icon:before {
+    margin-left: 5px;
+}
+
+.star-root.select {
+    background: #FFF2DC;
+}
+
+.star:before {
+    cursor: pointer;
+    color: #000;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+.star.select:before {
+    color: #F5A623;
+    font-weight: 900;
+}
+
+
+.edit:before {
+    cursor: pointer;
+    color: #C8C8C8;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+.edit.select:before {
+    color: #4A90E2;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+
+/*background*/
+.bg-gray1 {
+    background-color: #F2F2F2;
+}
+
+
+.bg-gray2 {
+    background-color: #E1E1E1;
+}
+
+.bg-blue {
+    background-color: #4A90E2;
+}
+
+.bg-white {
+    background-color: #FFF;
+}
+
+/*font color*/
+.cl-dark {
+    color: #000;
+}
+
+.cl-white {
+    color: #fff;
+}
+
+.cl-gray1 {
+    color: #f2f2f2;
+}
+
+.cl-gray2 {
+    color: #E1E1E1;
+}
+
+.cl-gray3 {
+    color: #C8C8C8;
+}
+
+/*align*/
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
